@@ -40,6 +40,12 @@ bash LineageOS_gsi/patches/apply-patches.sh .
 treble_app is now used from your compiled version.  
 First, make sure that Java 17 is set as your default. How to do this on [Arch Linux](https://wiki.archlinux.org/title/Java#List_compatible_Java_environments_installed)  
 The compilation itself,
+```
+cd treble_app
+./build.sh
+cd ..
+```
+
 
 ### Use ccache to speed up Android rebuilds
 
@@ -92,7 +98,7 @@ make systemimage -j$(nproc --all)
 
  ```
 make -j$(lscpu -b -p=Core,Socket | grep -v '^#' | sort -u | wc -l) target-files-package otatools
-bash ./lineage_build_unified/sign_target_files.sh $OUT/signed_target_files.zip
+bash ./LineageOS_gsi/sign_target_files.sh $OUT/signed_target_files.zip
 unzip -joq $OUT/signed_target_files.zip IMAGES/system.img -d $OUT/signed
  ```
 
