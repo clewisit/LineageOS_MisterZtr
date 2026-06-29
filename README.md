@@ -37,7 +37,7 @@ bash LineageOS_gsi/patches/apply-patches.sh .
 
 ### Building treble_app
 
-treble_app is now used from your compiled version.  
+treble_app is now used from your compiled version.  This must be done before setting up the build environment.
 First, make sure that Java 17 is set as your default. How to do this on [Arch Linux](https://wiki.archlinux.org/title/Java#List_compatible_Java_environments_installed)  
 The compilation itself,
 ```
