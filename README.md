@@ -87,7 +87,15 @@ GAPPS version with erofs:
 breakfast lineage_arm64_bgNE-bp4a-userdebug
 make systemimage -j$(nproc --all)
  ```
- 
+
+### Sign targets
+
+ ```
+make -j$(lscpu -b -p=Core,Socket | grep -v '^#' | sort -u | wc -l) target-files-package otatools
+bash ./lineage_build_unified/sign_target_files.sh $OUT/signed_target_files.zip
+unzip -joq $OUT/signed_target_files.zip IMAGES/system.img -d $OUT/signed
+ ```
+
 ### Compress
 
 After compilation,
