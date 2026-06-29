@@ -20,7 +20,7 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
 
 ### Clone the Manifest to add necessary dependencies for gsi:
  
-    git clone https://github.com/MisterZtr/treble_manifest.git .repo/local_manifests -b lineage-23.2
+    git clone https://github.com/clewisit/treble_manifest_misterztr.git .repo/local_manifests -b lineage-23.2
   
 ### Afterwards, sync the source by running this command:
 
@@ -49,34 +49,16 @@ You can add these lines to the ~/.bashrc or ~/.zshrc file to avoid typing them a
 export USE_CCACHE=1
 export CCACHE_COMPRESS=1
 export CCACHE_MAXSIZE=50G # 50 GB
+ccache -M 50G -F 0
 ``` 
 
-### Building Android 
+### Building Android with ext4:
 
-VANILLA version with erofs:
-
- ```
-. build/envsetup.sh
-ccache -M 50G -F 0
-breakfast lineage_arm64_bvNE-bp4a-userdebug
-make systemimage -j$(nproc --all)
- ```
- 
 VANILLA version with ext4:
 
  ```
 . build/envsetup.sh
-ccache -M 50G -F 0
 breakfast lineage_arm64_bvN4-bp4a-userdebug
-make systemimage -j$(nproc --all)
- ```
- 
-GAPPS version with erofs:
-
- ```
-. build/envsetup.sh
-ccache -M 50G -F 0
-breakfast lineage_arm64_bgNE-bp4a-userdebug
 make systemimage -j$(nproc --all)
  ```
  
@@ -84,8 +66,25 @@ GAPPS version with ext4:
 
  ```
 . build/envsetup.sh
-ccache -M 50G -F 0
 breakfast lineage_arm64_bgN4-bp4a-userdebug
+make systemimage -j$(nproc --all)
+ ```
+ 
+### Building Android with ext4:
+
+VANILLA version with erofs:
+
+ ```
+. build/envsetup.sh
+breakfast lineage_arm64_bvNE-bp4a-userdebug
+make systemimage -j$(nproc --all)
+ ```
+ 
+GAPPS version with erofs:
+
+ ```
+. build/envsetup.sh
+breakfast lineage_arm64_bgNE-bp4a-userdebug
 make systemimage -j$(nproc --all)
  ```
  
