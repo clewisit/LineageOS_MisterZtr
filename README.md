@@ -8,8 +8,8 @@ As a first step, you'll have to create and enter a folder with the appropriate n
 To do that, run these commands:
 
 ```bash
-mkdir LineageOS
-cd LineageOS
+mkdir lineage-23.2-misterztr
+cd lineage-23.2-misterztr
 ```
 
 ### To initialize your local repository, run this command:
