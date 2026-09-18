@@ -76,7 +76,7 @@ breakfast lineage_arm64_bgN4-bp4a-userdebug
 make systemimage -j$(nproc --all)
  ```
  
-### Building Android with ext4:
+### Building Android with erofs:
 
 VANILLA version with erofs:
 
